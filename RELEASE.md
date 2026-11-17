@@ -48,3 +48,21 @@ git push origin v1.0.0
 Title: `v1.0.0 - Initial Release`
 
 Use the full release notes included in the delivery message.
+
+
+## Patch release: v1.0.1
+
+GitHub Release title: `v1.0.1 - Fix GitHub Actions Composer Matrix`
+
+Before creating the tag, run the test suite and confirm all GitHub Actions matrix jobs pass.
+
+User-run commands after verification:
+
+```bash
+git add .github/workflows/tests.yml CHANGELOG.md RELEASE.md
+git status
+git commit -m "fix: correct Composer dependency matrix workflow"
+git push origin main
+git tag -a v1.0.1 -m "Release v1.0.1"
+git push origin v1.0.1
+```
