@@ -22,7 +22,7 @@ jobs:
 
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{{{ matrix.php }}}}
+          php-version: ${{ matrix.php }}
           extensions: mbstring, sqlite3, pdo_sqlite
           coverage: none
 
@@ -30,7 +30,7 @@ jobs:
         run: composer install --no-interaction --prefer-dist
 
       - name: Resolve dependency matrix
-        run: composer update --no-interaction --prefer-dist --${{{{ matrix.dependency-version }}}}
+        run: composer update --no-interaction --prefer-dist --${{ matrix.dependency-version }}
 
       - name: Run PHPUnit
         run: composer test
